@@ -207,8 +207,10 @@ article > strong {
 
 .contenedor_noticias article {
   background-color: var(--letrasClaras);
-  padding: 1.5rem var(--espaciado_sm);
+  padding: .75rem var(--espaciado_sm);
   flex: 1 1 30%;
+  display: flex;
+  flex-direction: column;
 }
 .contenedor_noticias article > a {
   text-decoration: none;
@@ -217,6 +219,8 @@ article > strong {
   background-color: var(--colorPrimario);
   padding: var(--espaciado_sm) var(--espaciado_md);
   border-radius: var(--espaciado_xs);
+  margin-top: auto;
+  align-self: flex-start;
 }
 
 /* #endregion */
