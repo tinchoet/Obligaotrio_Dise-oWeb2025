@@ -236,7 +236,7 @@ article > strong {
   margin-top: auto;
   align-self: flex-start;
 }
-.contenedor_noticias article > a:hover{
+.contenedor_noticias article > a:hover {
   background-color: var(--fondoClaro);
   color: var(--letrasClaras);
 }
@@ -273,13 +273,6 @@ footer a {
 
 /* #endregion */
 
-
-
-
-
-
-
-
 /* #MARK: MOBILE 
 */
 
@@ -304,7 +297,7 @@ footer a {
   figure {
     display: none;
   }
-  
+
   .contenedor > article:nth-child(4),
   .contenedor > article:nth-child(5) {
     display: none;
@@ -327,22 +320,9 @@ footer a {
 
 /* #endregion */
 
-
-
-
-
-
-
-
-
-
 /* #MARK: TABLET 
 */
 @media screen and (min-width: 768px) and (max-width: 991px) {
-
-
-
-
   /* #MARK: Header 
 */
   #header {
@@ -439,9 +419,6 @@ magicamente porque visual estudio es bueno arreglo el error. */
   /* #MARK: Mas Noticias 
 */
 
-  .contenedor_noticias .noticia_4 img:nth-child(1) {
-    display: none;
-  }
   .contenedor_noticias .noticia_4 img:nth-child(2) {
     display: block;
   }
@@ -452,22 +429,20 @@ magicamente porque visual estudio es bueno arreglo el error. */
     color: var(--letrasOscuras);
   }
   .contenedor_noticias article:nth-child(5) {
-    flex: 1 1 20%;
+    flex: 1 1 18%;
   }
-  .contenedor_noticias article:nth-child(6) {
-    flex: 1 1 55%;
+
+  #mas_noticias .contenedor article:last-child {
+    flex: 0 1 65%;
+  }
+  #mas_noticias .contenedor article:last-child img {
+    max-height: 180px;
+    object-fit: cover;
+    object-position: top;
   }
 }
 
 /* #endregion */
-
-
-
-
-
-
-
-
 
 /* #MARK: DESKTOP 
 */
@@ -613,16 +588,43 @@ magicamente porque visual estudio es bueno arreglo el error. */
     object-fit: cover;
     object-position: top;
   }
+
+  #mas_noticias .contenedor article img {
+    transform: scale(1);
+    transition: 0.3s ease-in-out;
+  }
+  #mas_noticias .contenedor article:hover img {
+    transform: scale(0.9);
+  }
 }
 
 /* #endregion */
 
-
- /* #MARK: CREDITOS
+/* #MARK: CREDITOS
  */
 
-li > strong{
+.creditos {
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+}
+.creditos h1 {
+  text-align: center;
+  font-size: var(--espaciado_xxl);
+}
+.creditos ul li a {
+  text-decoration: none;
   color: var(--letrasClaras);
 }
+.creditos ul li a:hover {
+  color: var(--colorPrimario);
+}
+ul {
+  list-style: none;
+}
+ul li {
+  margin-bottom: 1rem;
+}
 
- /* #endregion */
+/* #endregion */
