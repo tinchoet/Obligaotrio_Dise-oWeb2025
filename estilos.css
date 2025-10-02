@@ -40,6 +40,20 @@ body {
   background-color: var(--bg);
   font-family: var(--fuenteSecundaria);
 }
+h1,
+h2 {
+  width: 100%;
+  margin: var(--espaciado_lg) 0;
+  color: var(--letrasClaras);
+  font-family: var(--fuentePrincipal);
+  font-size: var(--espaciado_xl);
+  text-transform: uppercase;
+}
+.contenedor {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
 
 /* #endregion  */
 
@@ -72,21 +86,14 @@ header {
 
 .menu a {
   text-decoration: none;
-  font-family: var(--fuenteSecundaria);
   text-transform: uppercase;
-  color: var(--letrasOscuras);
-  background-color: var(--letrasClaras);
+  color: var(--letrasClaras);
   padding: var(--espaciado_sm);
-  border-radius: var(--espaciado_md);
-  margin-left: var(--espaciado_xs);
+  font-weight: 400;
 }
 .menu a:hover {
-  background-color: var(--letrasOscuras);
-  color: var(--letrasClaras);
-}
-
-#carrito a img {
-  width: 7%;
+  color: var(--letrasOscuras);
+  text-decoration: underline 2px solid;
 }
 
 /* #endregion */
@@ -99,7 +106,7 @@ header {
   background-image: url(assets/img/alpine_wec);
   background-color: gray;
   background-blend-mode: multiply;
-  background-position: 65%;
+  background-position: bottom;
   background-size: cover;
   background-repeat: no-repeat;
   color: white;
@@ -150,12 +157,7 @@ header {
   flex-direction: column;
   gap: var(--espaciado_lg);
 }
-.contenedor h1,
-.contenedor h2 {
-  margin: 5% 0;
-  color: var(--letrasClaras);
-  font-family: var(--fuentePrincipal);
-}
+
 article {
   background-color: var(--colorSecundario);
   border-radius: var(--espaciado_sm);
@@ -167,10 +169,7 @@ article > h3 {
   font-size: var(--espaciado_lg);
   margin: var(--espaciado_sm) 0;
 }
-article > strong,
-article > p {
-  font-family: var(--fuenteSecundaria);
-}
+
 article > strong {
   text-transform: uppercase;
   font-size: var(--espaciado_md);
@@ -192,11 +191,14 @@ article > strong {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  gap: var(--espaciado_xl);
+  gap: var(--espaciado_md);
 }
 .galeria img {
   border-radius: var(--espaciado_xs);
+  min-width: 0;
   box-shadow: 0px 18px 25px 4px rgba(0, 0, 0, 0.3);
+  object-fit: cover;
+  object-position: center;
 }
 
 /* #endregion */
@@ -213,13 +215,14 @@ article > strong {
   font-weight: bolder;
 }
 .contenedor_noticias p {
-  margin: var(--espaciado_lg) 0;
+  margin: var(--espaciado_sm) 0;
 }
 
 .contenedor_noticias article {
-  background-color: var(--letrasClaras);
   padding: 0.75rem var(--espaciado_sm);
-  flex: 1 1 30%;
+  background-color: var(--bg);
+  color: var(--letrasClaras);
+  flex: 1 1 33%;
   display: flex;
   flex-direction: column;
 }
@@ -232,6 +235,14 @@ article > strong {
   border-radius: var(--espaciado_xs);
   margin-top: auto;
   align-self: flex-start;
+}
+.contenedor_noticias article > a:hover{
+  background-color: var(--fondoClaro);
+  color: var(--letrasClaras);
+}
+
+.contenedor_noticias .noticia_4 img:nth-child(2) {
+  display: none;
 }
 
 /* #endregion */
@@ -254,7 +265,7 @@ footer a {
 }
 .redes {
   display: flex;
-  gap: var(--espaciado_sm);
+  gap: var(--espaciado_md);
 }
 .redes img {
   width: 1.5rem;
@@ -262,10 +273,21 @@ footer a {
 
 /* #endregion */
 
-/* #MARK: Celular 
+
+
+
+
+
+
+
+/* #MARK: MOBILE 
 */
 
 @media screen and (max-width: 767px) {
+  h1,
+  h2 {
+    font-size: var(--espaciado_xl);
+  }
   nav {
     order: -1;
   }
@@ -282,25 +304,47 @@ footer a {
   figure {
     display: none;
   }
+  
   .contenedor > article:nth-child(4),
   .contenedor > article:nth-child(5) {
     display: none;
   }
-  .galeria img:last-child {
+  .galeria img:nth-child(4) {
     display: none;
+  }
+
+  .contenedor_noticias article {
+    flex: 1 1 33%;
+  }
+  #destacado .contenedor_destacado {
+    padding: 0 5% 10%;
+  }
+  .contenedor_noticias article {
+    background-color: var(--letrasClaras);
+    color: var(--letrasOscuras);
   }
 }
 
 /* #endregion */
 
-/* #MARK: Tablet 
-*/
 
-@media screen and (min-width: 768px) {
-  #menu_hamburguesa,
-  #isologotipo {
-    display: none;
-  }
+
+
+
+
+
+
+
+
+/* #MARK: TABLET 
+*/
+@media screen and (min-width: 768px) and (max-width: 991px) {
+
+
+
+
+  /* #MARK: Header 
+*/
   #header {
     flex-direction: row-reverse;
   }
@@ -310,13 +354,20 @@ footer a {
     align-items: center;
     gap: var(--espaciado_md);
   }
+  #menu_hamburguesa,
+  #isologotipo {
+    display: none;
+  }
   .menu a {
     font-size: 0.75rem;
   }
   #carrito {
     margin-left: var(--espaciado_md);
   }
+  /* #endregion */
 
+  /* #MARK: Banner 
+*/
   .banner {
     flex-direction: row;
     align-items: center;
@@ -335,6 +386,11 @@ footer a {
     font-size: var(--espaciado_md);
   }
 
+  /* #endregion */
+
+  /* #MARK: Novedades
+   */
+
   #novedades .contenedor figure {
     display: none;
   }
@@ -343,28 +399,230 @@ footer a {
     flex-wrap: wrap;
     flex: 1 1 50%;
   }
-  #novedades .contenedor h1 {
-    width: 100%;
-  }
+
   #novedades article {
     flex: 1 1 30%;
   }
+  /* #endregion */
 
+  /* #MARK: Destacado
+   */
+  #destacado .contenedor_destacado {
+    padding: 0 8% 5%;
+  }
   .galeria {
-    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    
+    gap: var(--espaciado_md);
   }
-  
+
+  /* 
+  PROBLEMAS EN MOZILLA SI SE VE BIEN, PERO EN CHROME NO. 
+  EN MOZILLA A PARTIR DE 768 SI APLICA LA GALERIA EN LOS TAMAÑOS
+  EN CHROME O SUS DERIVADOS NO, CONTINUA SIENDO UNA COLUMNA */
+
+  /* 
+Problema solucionado, necesitaba darle un ancho minimo de 0 a las imagenes en destacado
+magicamente porque visual estudio es bueno arreglo el error. */
+
   .galeria img:nth-child(1),
   .galeria img:nth-child(4) {
-    flex: 1 1 30%;
+    flex: 1 1 25%;
   }
   .galeria img:nth-child(2),
   .galeria img:nth-child(3) {
     flex: 1 1 50%;
   }
+
+  /* #endregion */
+
+  /* #MARK: Mas Noticias 
+*/
+
+  .contenedor_noticias .noticia_4 img:nth-child(1) {
+    display: none;
+  }
+  .contenedor_noticias .noticia_4 img:nth-child(2) {
+    display: block;
+  }
+
+  .contenedor_noticias article {
+    flex: 1 1 30%;
+    background-color: var(--letrasClaras);
+    color: var(--letrasOscuras);
+  }
+  .contenedor_noticias article:nth-child(5) {
+    flex: 1 1 20%;
+  }
+  .contenedor_noticias article:nth-child(6) {
+    flex: 1 1 55%;
+  }
 }
 
 /* #endregion */
+
+
+
+
+
+
+
+
+
+/* #MARK: DESKTOP 
+*/
+
+@media screen and (min-width: 991px) {
+  h1,
+  h2 {
+    font-size: var(--espaciado_xxl);
+    text-align: center;
+  }
+  /* #MARK: Header 
+*/
+
+  header {
+    padding: var(--espaciado_md) var(--espaciado_xxl);
+  }
+  .menu {
+    gap: var(--espaciado_xl);
+  }
+  #menu_hamburguesa,
+  #logotipo {
+    display: none;
+  }
+  #isologotipo {
+    width: 6.5rem;
+  }
+  #carrito {
+    width: var(--espaciado_xl);
+  }
+
+  /* #endregion */
+
+  /* #MARK: Banner 
+*/
+  .banner {
+    background-image: linear-gradient(
+        to top,
+        rgba(33, 33, 33, 0.8) 0%,
+        rgba(33, 33, 33, 0) 30%
+      ),
+      url("assets/img/alpine_wec");
+    height: 95vh;
+    padding: 20vh 15vw;
+    background-position: bottom;
+    background-size: cover;
+
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+    gap: var(--espaciado_md);
+  }
+  .banner p {
+    font-size: var(--espaciado_xxl);
+    text-transform: uppercase;
+    width: 40%;
+  }
+  .suscripcion {
+    flex-direction: row;
+    gap: var(--espaciado_xl);
+  }
+  .suscripcion small {
+    font-size: var(--espaciado_lg);
+    text-align: end;
+  }
+  .banner p,
+  .suscripcion a,
+  .suscripcion small {
+    margin: 0;
+  }
+  /* #endregion */
+
+  /* #MARK: Novedades
+ */
+
+  #novedades .contenedor {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  #novedades .contenedor > figure img {
+    width: 100%;
+    height: auto;
+  }
+  #novedades .contenedor article {
+    flex: 1 1 20%;
+  }
+  #novedades .contenedor article:last-child {
+    flex: 0 1 50%;
+  }
+  /* #endregion */
+
+  /* #MARK: Destacado
+ */
+
+  #destacado {
+    padding: 2% 5% 5%;
+    background-color: var(--colorPrimario);
+  }
+  #destacado h2 {
+    margin-bottom: var(--espaciado_xxl);
+    font-weight: bold;
+  }
+  .galeria {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+  .galeria img {
+    width: 100%;
+  }
+  .galeria img:nth-child(4) {
+    display: none;
+  }
+
+  /* #MARK: Mas Noticias
+ */
+  #mas_noticias .contenedor {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .contenedor_noticias article {
+    flex: 1 1 30%;
+    background-color: #1d1d1d;
+    color: var(--letrasClaras);
+    border-radius: 0;
+  }
+
+  #mas_noticias .contenedor article {
+    flex: 1 1 20%;
+  }
+  #mas_noticias .contenedor article:last-child {
+    flex: 0 1 50%;
+    margin: 0 auto;
+    max-height: 400px;
+  }
+
+  #mas_noticias .contenedor article:last-child img {
+    max-height: 180px;
+    object-fit: cover;
+    object-position: top;
+  }
+}
+
+/* #endregion */
+
+
+ /* #MARK: CREDITOS
+ */
+
+li > strong{
+  color: var(--letrasClaras);
+}
+
+ /* #endregion */
