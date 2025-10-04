@@ -61,13 +61,14 @@ h2 {
 */
 
 header {
+  background-color: var(--colorPrimario);
+  color: var(--letrasOscuras);
+  padding: var(--espaciado_lg);
+
   display: flex;
   justify-content: space-between;
   flex-wrap: nowrap;
   align-items: center;
-  background-color: var(--colorPrimario);
-  color: var(--letrasOscuras);
-  padding: var(--espaciado_lg);
 }
 
 #logotipo,
@@ -218,7 +219,7 @@ article > strong {
   margin: var(--espaciado_sm) 0;
 }
 
-.contenedor_noticias article {
+#mas_noticias .contenedor article {
   padding: 0.75rem var(--espaciado_sm);
   background-color: var(--bg);
   color: var(--letrasClaras);
@@ -226,7 +227,7 @@ article > strong {
   display: flex;
   flex-direction: column;
 }
-.contenedor_noticias article > a {
+#mas_noticias .contenedor article > a {
   text-decoration: none;
   text-transform: uppercase;
   color: var(--letrasClaras);
@@ -236,12 +237,12 @@ article > strong {
   margin-top: auto;
   align-self: flex-start;
 }
-.contenedor_noticias article > a:hover {
+#mas_noticias .contenedor article > a:hover {
   background-color: var(--fondoClaro);
   color: var(--letrasClaras);
 }
 
-.contenedor_noticias .noticia_4 img:nth-child(2) {
+.noticia_4 img:nth-child(2) {
   display: none;
 }
 
@@ -309,10 +310,10 @@ footer a {
   .contenedor_noticias article {
     flex: 1 1 33%;
   }
-  #destacado .contenedor_destacado {
+  #destacado {
     padding: 0 5% 10%;
   }
-  .contenedor_noticias article {
+  #mas_noticias .contenedor article {
     background-color: var(--letrasClaras);
     color: var(--letrasOscuras);
   }
@@ -322,6 +323,7 @@ footer a {
 
 /* #MARK: TABLET 
 */
+
 @media screen and (min-width: 768px) and (max-width: 991px) {
   /* #MARK: Header 
 */
@@ -387,7 +389,7 @@ footer a {
 
   /* #MARK: Destacado
    */
-  #destacado .contenedor_destacado {
+  #destacado {
     padding: 0 8% 5%;
   }
   .galeria {
@@ -419,16 +421,16 @@ magicamente porque visual estudio es bueno arreglo el error. */
   /* #MARK: Mas Noticias 
 */
 
-  .contenedor_noticias .noticia_4 img:nth-child(2) {
+  .noticia_4 img:nth-child(2) {
     display: block;
   }
 
-  .contenedor_noticias article {
+  #mas_noticias .contenedor article {
     flex: 1 1 30%;
     background-color: var(--letrasClaras);
     color: var(--letrasOscuras);
   }
-  .contenedor_noticias article:nth-child(5) {
+  #mas_noticias .contenedor article:nth-child(5) {
     flex: 1 1 18%;
   }
 
@@ -447,7 +449,7 @@ magicamente porque visual estudio es bueno arreglo el error. */
 /* #MARK: DESKTOP 
 */
 
-@media screen and (min-width: 991px) {
+@media screen and (min-width: 992px) {
   h1,
   h2 {
     font-size: var(--espaciado_xxl);
@@ -567,7 +569,7 @@ magicamente porque visual estudio es bueno arreglo el error. */
     justify-content: center;
     flex-wrap: wrap;
   }
-  .contenedor_noticias article {
+  #mas_noticias .contenedor article {
     flex: 1 1 30%;
     background-color: #1d1d1d;
     color: var(--letrasClaras);
