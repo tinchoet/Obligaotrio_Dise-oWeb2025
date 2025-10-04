@@ -310,7 +310,7 @@ footer a {
   .contenedor_noticias article {
     flex: 1 1 33%;
   }
-  #destacado {
+  #destacado > div{
     padding: 0 5% 10%;
   }
   #mas_noticias .contenedor article {
@@ -389,9 +389,10 @@ footer a {
 
   /* #MARK: Destacado
    */
-  #destacado {
+  #destacado > div {
     padding: 0 8% 5%;
   }
+
   .galeria {
     flex-direction: row;
     flex-wrap: wrap;
